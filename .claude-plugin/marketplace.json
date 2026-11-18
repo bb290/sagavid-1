@@ -1,0 +1,13 @@
+{
+  "name": "sagavid",
+  "owner": {
+    "name": "Sagareus Property Management"
+  },
+  "plugins": [
+    {
+      "name": "sagavid",
+      "source": "./",
+      "description": "Make Sagareus listing videos (3 styles) and before/after videos (3 styles) at your desk and send them to Brittany for Final Approval."
+    }
+  ]
+}
