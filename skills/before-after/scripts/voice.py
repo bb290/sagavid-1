@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The voiceover for a Property Management IRL episode: clean, transcribe, tighten.
+"""The voiceover for a before/after video: clean, transcribe, tighten.
 
 Usage:
   python3 voice.py <episode_dir> <raw_audio> [--cut START-END ...] [--max-sent 0.42] [--max-gap 0.30]
@@ -107,6 +107,7 @@ for x in w:
             if tail and tail.lower().startswith(head.lower()):
                 text = tail
     words.append({"text": text, "start": round(remap(s), 3), "end": round(remap(x["end"]), 3)})
+words = [x for x in words if x["end"] - x["start"] >= 0.03]   # words inside a cut collapse to zero length: drop them
 (vo / "tight.json").write_text(json.dumps({"segments": keep, "cuts": cuts, "words": words}, indent=1))
 
 total = sum(e - s for s, e in keep)
@@ -118,5 +119,5 @@ stumbles += [f"{a['text']} {b['text']}@{a['start']:.2f}" for a, b in zip(w, w[1:
              if a["text"].lower().strip(".,?!") == b["text"].lower().strip(".,?!")]
 if stumbles:
     print("possible stumbles (raw seconds; confirm on the waveform before cutting):", "; ".join(stumbles))
-if total > 28.0:
-    print(f"WARNING: {total:.1f}s of voice leaves no room for the end card under 30 s. Cut words, never speed.")
+if total > 27.0:
+    print(f"WARNING: {total:.1f}s of voice leaves no room for the 3 s end card under 30 s. Cut words, never speed.")

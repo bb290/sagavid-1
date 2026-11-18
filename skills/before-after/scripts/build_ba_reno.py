@@ -120,6 +120,7 @@ class Tw(list):
 
 
 sfx = []          # (absolute time, file, volume, duration)
+SYNC = []         # absolute time of the video's big moment, for music.py (assets/music/sync.json)
 
 # ---- the Sweep: an Emerald bar with a white leading edge, tilted, crossing right to left -----------------------
 D = 960 * math.tan(TILT * math.pi / 180)
@@ -406,6 +407,7 @@ def item(sid, it, s0, tw, n):
     if k == "planks":
         at = rel(it["at"])
         rows, pd = int(it.get("rows", 9)), float(it.get("dur", 1.0))
+        SYNC.append(s0 + at)            # first plank row = the music's drop
         vid = video(f"{iid}-v", it["clip"], at, dur_of(sid) - at, track=1)
         planks_anim(f"{iid}-w", at, rows, pd, tw)
         tw.add(f'tl.fromTo("#{iid}-seams", {{ opacity: 0.9 }}, {{ opacity: 0, duration: 0.5, ease: "power1.out", immediateRender: false }}, {at + pd + 0.05:.3f});')
@@ -522,6 +524,10 @@ scene_file("endcard", body, tw)
 hosts.append(("endcard", END, END_LEN))
 for r in range(0, 9, 2):
     sfx.append((END + r * 0.6 / 9, "sfx-click-soft.mp3", 0.22, 0.37))
+
+(ep / "assets/music").mkdir(parents=True, exist_ok=True)
+if SYNC:
+    (ep / "assets/music/sync.json").write_text(json.dumps({"key": round(min(SYNC), 3), "total": TOTAL}))
 
 # ---- captions ----------------------------------------------------------------------------------------------
 subprocess.run([sys.executable, str(Path(__file__).with_name("captions.py")), str(ep), "--until", f"{spec.get('caption_until', END)}",

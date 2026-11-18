@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Burned-in captions for a Property Management IRL episode.
+"""Burned-in captions for a sagavid video.
 
 Usage: python3 captions.py <episode_dir> [--until SECONDS] [--top PX]
 

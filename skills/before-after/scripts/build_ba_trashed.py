@@ -112,6 +112,7 @@ class Tw(list):
 
 
 sfx = []          # (absolute time, file, volume, duration)
+SYNC = []         # absolute time of the video's big moment, for music.py (assets/music/sync.json)
 
 # ---- the Sweep: an Emerald bar with a white leading edge, tilted, crossing right to left -----------------------
 D = 960 * math.tan(TILT * math.pi / 180)
@@ -320,6 +321,7 @@ def item(sid, it, s0, tw, n):
         sfx.append((d0 - 0.02, "sfx-impact-bass-1.mp3", 0.45, 2.1))
         if "up" in it:
             u0 = rel(it["up"])
+            SYNC.append(s0 + u0)        # first roll-up opening = the music's drop
             tw.add(f'tl.to("#{iid}", {{ yPercent: -101, duration: 0.5, ease: "power2.inOut" }}, {u0:.3f});')
             sfx.append((u0, "sfx-whoosh.mp3", 0.32, 0.57))
         lbl = f'<span>{esc(it.get("label", ""))}{f"<small>{esc(it["small"])}</small>" if it.get("small") else ""}</span>'
@@ -443,6 +445,10 @@ hosts.append(("endcard", END, END_LEN))
 sfx.append((END + 0.02, "sfx-whoosh-short.mp3", 0.3, 0.57))
 sfx.append((END + 0.24, "sfx-impact-bass-1.mp3", 0.4, 2.1))
 sfx.append((END + 0.42, "sfx-whoosh.mp3", 0.3, 0.57))
+
+(ep / "assets/music").mkdir(parents=True, exist_ok=True)
+if SYNC:
+    (ep / "assets/music/sync.json").write_text(json.dumps({"key": round(min(SYNC), 3), "total": TOTAL}))
 
 # ---- captions ----------------------------------------------------------------------------------------------
 subprocess.run([sys.executable, str(Path(__file__).with_name("captions.py")), str(ep), "--until", f"{spec.get('caption_until', END)}",
