@@ -40,6 +40,8 @@ Each build script's docstring holds the full `shots.json` schema with an example
 
 ### 1. Gather
 
+If the staff member pasted an Asana card link (the board's columns: New = plan and gather footage, In Progress = building with Claude, Draft = Final Approval, Approved = ready to ship, Shipped), read the card for the Buildium link, the walkthrough and the Style, and move it to **In Progress**: Video Status (`1219918573486131`) = In Progress (`1219918573486133`) and the **In Progress** section (`1219918704893858`). Use that card in step 6 instead of searching for one.
+
 ```
 python3 "$SKILL/scripts/gather.py" <buildium listing url>
 ```

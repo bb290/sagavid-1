@@ -40,6 +40,7 @@ Every style ends the same: "Safe. Clean. Working. Warm." one word at a time, the
 The staff member pastes the Asana card link. Through the Asana connector read the card: name, description, custom fields (Video Type should be Before/After; Style is Junk, Trashed or Reno) and attachments.
 
 - **Check the source first** (rules above). Missing: stop, say exactly what to add.
+- **Move the card to In Progress** once the source is there: Video Status (`1219918573486131`) = In Progress (`1219918573486133`) and the **In Progress** section (`1219918704893858`). The board's columns are: New (plan and gather footage), In Progress (building with Claude), Draft (Final Approval), Approved (ready to ship), Shipped.
 - **Get the media** into `~/Documents/Sagareus Videos/<card name>/source/`: Asana attachments by their download link; Google Drive links through Google Drive for desktop (find the file by name under `~/Library/CloudStorage/GoogleDrive-*/`, on Windows the `G:` drive) and copy it in. If a file can't be found, ask the staff member to drag it into the chat. Videos go in `source/clips/`, photos in `source/photos/` (or `during/` for Reno work photos), a move-out report PDF in `source/report/` (pull its photos with `pdfimages -j -p`; use only its photos, never its text).
 - **Read the SOP** (Junk, Trashed) through the Outline connector if there is one; otherwise ask the staff member to paste the SOP text into the chat.
 
