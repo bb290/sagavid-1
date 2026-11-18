@@ -116,3 +116,4 @@ Tell the staff member it's with Brittany, with the card link. Done.
 - **Music:** each style ships its own track; Trashed and Reno need the build's `assets/music/sync.json`, so build before `music.py`.
 - **Report photos** from a move-out report PDF are small (740 px): show them as report cards (Reno), never full screen. Label them by section only ("Carpet"), never with counts you guessed.
 - `hf render` complaining about Chrome: run `hf browser` (or `hf doctor`) and follow it.
+- **Windows:** run Python as `py` (not `python3`, which can open the Microsoft Store), and `pdfimages` is usually missing: ask the staff member to save the report's photos and drag them in. Drive for desktop is the `G:` drive.
