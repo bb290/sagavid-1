@@ -39,7 +39,8 @@ Every style ends the same: "Safe. Clean. Working. Warm." one word at a time, the
 
 The staff member pastes the Asana card link. Through the Asana connector read the card: name, description, custom fields (Video Type should be Before/After; Style is Junk, Trashed or Reno) and attachments.
 
-- **Check what's there first.** If anything needed is missing, ask for all of it in the chat in one message, in plain words, and wait for the answer. Don't tell them to go edit the card. Needed:
+- **Read linked tasks too.** If the card links another Asana task (a Turn Over, Move Out or maintenance task), read it and its comments and subtasks for context before asking anything: what was found, what was done, which rooms, repair or upgrade. Use only what the work was; never costs, quotes, who paid, owner or vendor names, or dates (they stay off screen and out of the script). Write the Reno note from it yourself and show it to the staff member to confirm.
+- **Check what's there first.** If anything needed is still missing, ask for all of it in the chat in one message, in plain words, and wait for the answer. Don't tell them to go edit the card. Needed:
   - **Junk, Trashed:** the SOP link. Ask them to paste it ("Which SOP does this video show? Paste the Outline link."). If they don't know which one, ask what happened at the move-out and suggest the SOP that fits, then ask them to confirm. No SOP link, no video.
   - **Reno:** the note. Ask: was it a forced repair, an optional upgrade, or both (this picks the "Repair · not optional" or "Upgrade" mark); what was done, in which rooms; and for a repair, what was found (water damage, mold, a soft subfloor). Their answer is the note. No note, no video.
   - **Style** blank or **Video Type** not Before/After: ask which style (Junk, Trashed, Reno; one line on each from the Styles table).
