@@ -23,7 +23,7 @@ Every style ends the same: "Safe. Clean. Working. Warm." one word at a time, the
 
 ## Rules (never break these)
 
-- **The source is strict.** Junk and Trashed: the card must have the SOP link, and every step and claim in the script comes from that SOP or the footage. Reno: the card must have 1 to 2 lines about what is happening in the video, and every claim comes from that note or the footage. **No SOP link (Junk, Trashed) or no note (Reno): stop** and ask the staff member to add it to the card. Never add a step, deadline, law, or claim the source doesn't have.
+- **The source is strict.** Junk and Trashed: the card must have the SOP link, and every step and claim in the script comes from that SOP or the footage. Reno: there must be 1 to 2 lines about what is happening in the video, and every claim comes from that note or the footage. **Missing from the card: ask for it in the chat** (step 1), then add the answer to the card. No video starts without it, and you never fill the gap yourself: never add a step, deadline, law, or claim the source doesn't have.
 - **30 seconds or less, end card included.** About 60 to 65 spoken words. Cut lines, never speed up the voice.
 - **Brittany's voice, the staff member's recording.** Write the script by `VOICE.md`. Never generate a voice (no text-to-speech, not even as a placeholder or timing guide). No recording yet: stop and ask for one.
 - **Audience: property owners.** Say "resident", never "tenant". Jokes land on the mess, never on the people.
@@ -39,14 +39,19 @@ Every style ends the same: "Safe. Clean. Working. Warm." one word at a time, the
 
 The staff member pastes the Asana card link. Through the Asana connector read the card: name, description, custom fields (Video Type should be Before/After; Style is Junk, Trashed or Reno) and attachments.
 
-- **Check the source first** (rules above). Missing: stop, say exactly what to add.
-- **Move the card to In Progress** once the source is there: Video Status (`1219918573486131`) = In Progress (`1219918573486133`) and the **In Progress** section (`1219918704893858`). The board's columns are: New (plan and gather footage), In Progress (building with Claude), Draft (Final Approval), Approved (ready to ship), Shipped.
+- **Check what's there first.** If anything needed is missing, ask for all of it in the chat in one message, in plain words, and wait for the answer. Don't tell them to go edit the card. Needed:
+  - **Junk, Trashed:** the SOP link. Ask them to paste it ("Which SOP does this video show? Paste the Outline link."). If they don't know which one, ask what happened at the move-out and suggest the SOP that fits, then ask them to confirm. No SOP link, no video.
+  - **Reno:** the note. Ask: was it a forced repair, an optional upgrade, or both (this picks the "Repair · not optional" or "Upgrade" mark); what was done, in which rooms; and for a repair, what was found (water damage, mold, a soft subfloor). Their answer is the note. No note, no video.
+  - **Style** blank or **Video Type** not Before/After: ask which style (Junk, Trashed, Reno; one line on each from the Styles table).
+  - **Media:** no before or no after footage on the card or behind its links: ask them to drag it into the chat or paste the link.
+- **Write their answers onto the card** as a comment (the SOP link, or "Reno note: ...", and the style), signed `--- Claude Video Editor`, so Brittany sees the source at Final Approval. Set the Style field only if it was blank.
+- **Move the card to In Progress** once you have the source: Video Status (`1219918573486131`) = In Progress (`1219918573486133`) and the **In Progress** section (`1219918704893858`). The board's columns are: New (plan and gather footage), In Progress (building with Claude), Draft (Final Approval), Approved (ready to ship), Shipped.
 - **Get the media** into `~/Documents/Sagareus Videos/<card name>/source/`: Asana attachments by their download link; Google Drive links through Google Drive for desktop (find the file by name under `~/Library/CloudStorage/GoogleDrive-*/`, on Windows the `G:` drive) and copy it in. If a file can't be found, ask the staff member to drag it into the chat. Videos go in `source/clips/`, photos in `source/photos/` (or `during/` for Reno work photos), a move-out report PDF in `source/report/` (pull its photos with `pdfimages -j -p`; use only its photos, never its text).
 - **Read the SOP** (Junk, Trashed) through the Outline connector if there is one; otherwise ask the staff member to paste the SOP text into the chat.
 
 ### 2. Questions, then the script
 
-Ask only what you need, once: what the main problem was, what was done, anything the footage can't show. This is the only time they're asked for facts.
+Ask only what you still need, once (skip anything step 1 already answered): what the main problem was, what was done, anything the footage can't show. This is the only time they're asked for facts.
 
 Look at the footage: 1 frame per second contact sheets (`ffmpeg -i <clip> -vf "fps=1,scale=180:-2,tile=8x6" -frames:v 1 boards/<clip>-sheet.jpg`; one tile per second, read left to right) and full-size stills at the moments you might use. Find **matching angles** (the same spot filmed from the same place at move-out and at listing), the worst before shots, and anything from the never-show list (hands, the filmer's shadow, paperwork on doors, faces). Phone video is often HDR; the build handles it.
 
