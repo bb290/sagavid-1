@@ -59,7 +59,7 @@ Write `shots.json` in the listing folder for the chosen style (schema in the bui
 - **End card:** "Schedule your tour today." and "Managed by Sagareus Property Management." Nothing else.
 - Photo pans `x0` to `x1` (0 = left edge, 1 = right edge): point them at what the label names.
 
-Then show the staff member a plain list: each slide's photo (by room), its words, and anything you are unsure of (a claim the photos can't prove, a photo you left out and why). Ask them to confirm or correct. Their confirmations go in `notes`.
+Note anything you are unsure of (a claim the photos can't prove, a photo you left out and why); it goes on the storyboard in step 4 for the staff member to confirm. Their confirmations go in `notes`.
 
 ### 3. Music
 
@@ -80,6 +80,8 @@ hf snapshot --at <the middle of every scene> --json
 ```
 
 Fix every `check` error. Look at every snapshot yourself before showing anyone: text over a busy background, a pan that drifts onto a window with a street, a car, or a person, a pan that misses what the label names. Fix in shots.json and rebuild.
+
+**Storyboard as an Artifact they can comment on** (Brittany, 2026-11-24). Publish the storyboard with the Artifact tool, never as a local file or a list in the chat: one card per slide with its snapshot (scaled to about 540 px wide, published as files next to the page), its words and pills, and a line on what it shows, then a "Your call" box at the top with everything to confirm (a claim, a photo left out and why, a listing detail that looks wrong). Turn comments on: `capabilities: {"comments": {"composer_only": true}}`, each card marked `data-comment-target`, with a Comment button that calls `openComposer({element: card})`. Give them the link and say: comment on any frame, or say "approved" here. Read their comments (ArtifactComments), apply them in shots.json, rebuild, re-snapshot, republish to the same link, and resolve each thread you acted on. Wait for their OK before the preview.
 
 Then open the preview for the staff member: `hf preview` (it opens in their browser). Say: press play; tell me anything to change in plain words. Apply their changes to shots.json and rebuild (never edit the files the preview shows; a rebuild overwrites them). Repeat until they say it is good.
 

@@ -60,13 +60,13 @@ Write the script by `VOICE.md`: 6 to 9 short lines, about 60 to 65 words, her op
 
 ### 3. Storyboard, then STOP for edits
 
-Make `boards/storyboard.html` in the video folder and open it in the browser: one card per beat with the still, the on-screen text (stickers, tape, marks, captions), and the script line under it, in the style's look (see the samples). Tell the staff member to check three things, as Brittany's process says:
+Publish the storyboard as an Artifact they can comment on (Brittany, 2026-11-24), never as a local file: one card per beat with the still, the on-screen text (stickers, tape, marks, captions), and the script line under it, in the style's look (see the samples), with anything to confirm in a box at the top. Turn comments on: `capabilities: {"comments": {"composer_only": true}}`, each card marked `data-comment-target`, with a Comment button that calls `openComposer({element: card})`. Give them the link. Tell the staff member to check three things, as Brittany's process says, and to comment on any frame:
 
 1. **Rotated images** (report and phone photos are often sideways or upside down: rotate the source file with ffmpeg, `ffmpeg -y -i in.jpg -vf transpose=1 out.jpg` for 90° clockwise, `transpose=2` counterclockwise, `transpose=1,transpose=1` for 180°; look at it after).
 2. **Personal info** (names, unit or house numbers, plates, mail, notices, faces).
 3. **Dates or anything that makes us look bad** (a long turnover, a mess blamed on someone).
 
-Apply their changes and reopen. When they're happy, give them the script to record.
+Read their comments (ArtifactComments), apply them, republish to the same link, and resolve each thread you acted on. When they're happy, give them the script to record.
 
 ### 4. Recording
 
