@@ -5,7 +5,7 @@ description: Make a Sagareus before/after video at your desk from a Video Produc
 
 # Before/After Video (staff edition)
 
-One Video Production card in, one finished vertical before/after video out, made on your own computer. You (the staff member) check the storyboard, record the voiceover, and approve the preview here in the chat; then the card goes to **Draft** with a **Final Approval** subtask for Brittany. She approves and moves it to **Approved**, and the automation schedules it to Instagram, Facebook, YouTube, LinkedIn and Google Business Profile. Nothing posts from your computer.
+One Video Production card in, one finished vertical before/after video out, made on your own computer. You (the staff member) check the storyboard, record the voiceover, and approve the preview here in the chat; then the card goes to **Draft** with a **Final Approval** subtask for Brittany. She approves and moves it to **Approved**, and it is scheduled to Instagram, Facebook, YouTube, LinkedIn and Google Business Profile from her side. Nothing posts from your computer.
 
 Talk to the staff member in plain words. They are not video editors or developers: run every command yourself, say in a sentence what you are doing, and show results (open the storyboard, the preview, the video). Never ask them to edit a file.
 
@@ -32,12 +32,18 @@ Every style ends the same: "Safe. Clean. Working. Warm." one word at a time, the
 - **No alterations:** never edit a photo's content (rotating a sideways photo is fine and expected).
 - **Brand:** Emerald `#0B4F42`, Off-White `#F5F0E8`, White, ink `#1a1a1a`, Inter. The build scripts already do this; never restyle.
 - No em dashes and no emojis anywhere you write: on screen, in captions, in Asana.
+- **Every video has a card** (Brittany, 2026-11-25). The Video Production board is the record of what is happening with every video. No video starts without a card: ask for it first, and make one if there is none (step 1). Keep the card current as you go: move it when the video changes stage, and add a short comment at each checkpoint (signed `--- Claude Video Editor`) so anyone opening the card can see where it is without asking. If the staff member stops partway or the video is dropped, comment where it stopped and why before you finish. Never create or change Asana fields; if a field or section can't be set, say which and leave it for Brittany.
+- **Card checkpoints.** Comment on the card (one or two lines, signed `--- Claude Video Editor`) when: the storyboard is approved by the staff member; the recording is in; the final is rendered and they say it's ready (just before the hand-off); or work stops for the day, or for good, before the hand-off (where it stopped and what's next). Never put costs, owner or resident names, or anything from the never-show list in a comment.
 
 ## Steps
 
-### 1. Read the card
+### 1. Find or make the card, then read it
 
-The staff member pastes the Asana card link. Through the Asana connector read the card: name, description, custom fields (Video Type should be Before/After; Style is Junk, Trashed or Reno) and attachments.
+Start with the card, before anything else. If the staff member didn't paste a Video Production card link, ask: "Which Asana card is this video for? Paste the link from the Video Production board, or say 'new' and I'll make one." If they name a property or topic, search the Video Production project (`1219918573321945`) for it first and offer a match ("Is it this card: <name>?").
+
+- **New card:** create it in the Video Production project, named `Before/After - <short title>` (what the video shows and the city, for example `Before/After - LVP Upgrade, Bellevue`; never a unit or house number, never an owner or resident name). Set Video Type (`1219918701563115`) = Before/After (`1219918701563117`), Style if you know it, and assign it to the staff member (the signed-in Asana user). Description: one line on what the video shows, where the footage is (links), and `--- Claude Video Editor` as its last line. Leave it in **New** for now; it moves to In Progress below. Give them the card link.
+
+Through the Asana connector read the card: name, description, custom fields (Video Type should be Before/After; Style is Junk, Trashed or Reno) and attachments.
 
 - **Read linked tasks too.** If the card links another Asana task (a Turn Over, Move Out or maintenance task), read it and its comments and subtasks for context before asking anything: what was found, what was done, which rooms, repair or upgrade. Use only what the work was; never costs, quotes, who paid, owner or vendor names, or dates (they stay off screen and out of the script). Write the Reno note from it yourself and show it to the staff member to confirm.
 - **Check what's there first.** If anything needed is still missing, ask for all of it in the chat in one message, in plain words, and wait for the answer. Don't tell them to go edit the card. Needed:

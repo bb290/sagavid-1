@@ -35,12 +35,20 @@ Each build script's docstring holds the full `shots.json` schema with an example
 - **Nothing private in frame:** license plates, mail, residents' faces, family photos. No children, ever.
 - No em dashes and no emojis anywhere you write: on screen, in Asana.
 - **Nothing posts from here.** This skill ends at the Asana hand-off.
+- **Every video has a card** (Brittany, 2026-11-25). The Video Production board is the record of what is happening with every video. No video starts without a card: ask for it first, and make one if there is none (step 1). Keep the card current as you go: move it when the video changes stage, and add a short comment at each checkpoint (signed `--- Claude Video Editor`) so anyone opening the card can see where it is without asking. If the staff member stops partway or the video is dropped, comment where it stopped and why before you finish. Never create or change Asana fields; if a field or section can't be set, say which and leave it for Brittany.
+- **Card checkpoints.** Comment on the card (one or two lines, signed `--- Claude Video Editor`) when: the storyboard is approved by the staff member; the final is rendered and they say it's ready (just before the hand-off); or work stops for the day, or for good, before the hand-off (where it stopped and what's next). Never put costs, owner or resident names, or anything from the never-show list in a comment.
 
 ## Steps
 
-### 1. Gather
+### 1. Find or make the card, then gather
 
-If the staff member pasted an Asana card link (the board's columns: New = plan and gather footage, In Progress = building with Claude, Draft = Final Approval, Approved = ready to ship, Shipped), read the card for the Buildium link, the walkthrough and the Style, and move it to **In Progress**: Video Status (`1219918573486131`) = In Progress (`1219918573486133`) and the **In Progress** section (`1219918704893858`). Use that card in step 6 instead of searching for one.
+Start with the card, before anything else (the board's columns: New = plan and gather footage, In Progress = building with Claude, Draft = Final Approval, Approved = ready to ship, Shipped).
+
+- **They pasted a card link:** read it for the Buildium link, the walkthrough and the Style.
+- **No card link:** search the Video Production project (`1219918573321945`) for the listing's street number and name. One match: confirm it ("Is it this card: <name>?"). None: ask "Is there an Asana card for this video? Paste the link from the Video Production board, or say 'new' and I'll make one."
+- **New card:** create `Listing - <street address>, <City>` in the Video Production project. Set Video Type (`1219918701563115`) = Listing (`1219918701563116`), assign it to the staff member (the signed-in Asana user), and put the Buildium link, any walkthrough links and `--- Claude Video Editor` (last line) in the description. Set Style once it's picked. Give them the card link.
+
+Then move the card to **In Progress**: Video Status (`1219918573486131`) = In Progress (`1219918573486133`) and the **In Progress** section (`1219918704893858`). Step 6 uses this same card.
 
 ```
 python3 "$SKILL/scripts/gather.py" <buildium listing url>
@@ -101,7 +109,7 @@ Only after the staff member says it is ready.
 
 1. **Drive:** copy the MP4 to the shared drive's Finals folder as `<YYYY-MM-DD> Listing <street address> <City> (<Style>).mp4`. Find the folder with Google Drive for desktop: `ls ~/Library/CloudStorage/GoogleDrive-*/"Shared drives/Video Content/Finals"` on a Mac (on Windows, the `G:` drive's `Shared drives\Video Content\Finals`). Get the file's link: wait a few seconds for it to sync, then on a Mac `xattr -p 'com.google.drivefs.item-id#S' "<file>"` gives the id for `https://drive.google.com/file/d/<id>/view`. If that fails, ask the staff member to right-click the file in Drive, copy the link, and paste it.
 2. **The card** on the Video Production board (Asana project `1219918573321945`), through the Asana connector:
-   - Look for an existing card for this address (search the project's tasks for the street number and name). Use it if there is one; otherwise create one named `Listing - <address>, <City>` in the project.
+   - Use the card from step 1.
    - Set the custom fields: Video Type (`1219918701563115`) = Listing (`1219918701563116`); Style (`1219938203421150`) = Fast Tour `1219938203421151`, Auto-Slide `1219938203421152`, or Editorial `1219938203421153`; Video Status (`1219918573486131`) = Draft (`1219944386978126`).
    - Move it to the **Draft** section (`1219944273290688`).
    - Assign the card to Brittany (`bb@sagareus.com`).

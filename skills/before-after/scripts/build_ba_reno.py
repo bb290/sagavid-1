@@ -273,7 +273,7 @@ def item(sid, it, s0, tw, n):
         tw.add(f'tl.fromTo("#{iid}", {{ opacity: 0, scale: 1.8, rotation: -2 }}, {{ opacity: 1, scale: 1, rotation: -7, duration: 0.2, ease: "power4.in", immediateRender: false }}, {at:.3f});')
         sfx.append((at + 0.17, "sfx-impact-bass-1.mp3", 0.42, 2.1))
         return (f'<div class="stampwrap" style="top:{it.get("y", 640)}px"><div id="{iid}" class="stamp" data-layout-allow-overlap>'
-                f'<span class="ink">{esc(it["text"])}</span></div></div>')
+                f'<span class="ink">{esc(it["text"]).replace(chr(10), "<br>")}</span></div></div>')
     if k == "tape":
         at = rel(it["at"])
         tw.add(f'tl.fromTo("#{iid}", {{ opacity: 0, scale: 1.35, rotation: -3 }}, {{ opacity: 1, scale: 1, rotation: -8, duration: 0.18, ease: "power4.in", immediateRender: false }}, {at:.3f});')
@@ -609,7 +609,7 @@ STAMP_MASK = ("url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/
       .stampwrap {{ position: absolute; left: 0; right: 0; display: flex; justify-content: center; }}
       .stamp {{ border: 14px solid var(--emerald); border-radius: 24px; padding: 14px; background: rgba(245,240,232,.95); opacity: 0;
                box-shadow: 0 14px 40px rgba(0,0,0,.35); -webkit-mask-image: {STAMP_MASK}; mask-image: {STAMP_MASK}; }}
-      .stamp .ink {{ display: block; border: 5px solid var(--emerald); border-radius: 12px; padding: 22px 50px 30px; white-space: nowrap;
+      .stamp .ink {{ display: block; border: 5px solid var(--emerald); border-radius: 12px; padding: 22px 50px 30px; white-space: nowrap; text-align: center;
                     font-size: 132px; font-weight: 800; line-height: 1; letter-spacing: .03em; text-transform: uppercase; color: var(--emerald); }}
       .ecard {{ position: absolute; inset: 0; background: var(--cream); }}
       .tracker {{ position: absolute; left: 48px; right: 48px; top: 150px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }}

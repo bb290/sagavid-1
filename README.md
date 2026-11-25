@@ -2,8 +2,8 @@
 
 Sagareus video tools for staff (sagavid-1), packaged as a Claude Code plugin. Two video types, three styles each:
 
-- **`/sagavid:before-after` + the Video Production card** makes a before/after video for owners, 30 seconds or less, in one of three styles (Junk, Trashed, Reno). Junk and Trashed need the SOP link on the card; Reno needs 1 to 2 lines on the card about what is happening in the video. Claude writes the script in Brittany's voice from that source (`VOICE.md`) and the staff member records it; never an AI voice. Full steps in `skills/before-after/SKILL.md`.
-- **`/sagavid:listing-video <buildium link>`** makes a 20-to-25-second vertical listing video from a Buildium rental listing (photos plus any phone walkthrough), in one of three approved styles (Fast Tour, Auto-Slide, Editorial). The staff member approves the storyboard (a claude.ai Artifact they comment on) and the cut, and Claude puts it on the Asana Video Production board in **Draft**, assigned to Brittany for Final Approval. All three work the same way: the staff member approves their own storyboard and cut, and the card lands in Draft for Brittany. When Brittany moves the card to **Approved**, it is scheduled to the five channels from her side. Nothing posts from a staff computer.
+- **`/sagavid:before-after` + the Video Production card** makes a before/after video for owners (Claude asks for the card first, or makes one), 30 seconds or less, in one of three styles (Junk, Trashed, Reno). Junk and Trashed need the SOP link on the card; Reno needs 1 to 2 lines on the card about what is happening in the video. Claude writes the script in Brittany's voice from that source (`VOICE.md`) and the staff member records it; never an AI voice. Full steps in `skills/before-after/SKILL.md`.
+- **`/sagavid:listing-video <buildium link>`** makes a 20-to-25-second vertical listing video from a Buildium rental listing (photos plus any phone walkthrough), in one of three approved styles (Fast Tour, Auto-Slide, Editorial). The staff member approves the storyboard (a claude.ai Artifact they comment on) and the cut, Every video has a card on the Asana Video Production board: Claude asks for it first, makes one if there isn't one, and comments on it at each checkpoint so the board shows where every video is. When the staff member is happy, Claude moves the card to **Draft**, assigned to Brittany for Final Approval. All three work the same way: the staff member approves their own storyboard and cut, and the card lands in Draft for Brittany. When Brittany moves the card to **Approved**, it is scheduled to the five channels from her side. Nothing posts from a staff computer.
 
 Staff guide with the Video Creation steps and all six samples: Outline, [SagaVids -1](https://sagareus.getoutline.com/doc/sagavids-1-MBhNsUEbSF). Setup (Mac and Windows, step by step) is below.
 
@@ -271,11 +271,11 @@ Restart Claude if it asks.
 
 Type `/sagavid:listing-video` or `/sagavid:before-after` in the Code tab; Claude walks you through the rest (the full steps are in the Outline guide). The listing video:
 
-1. Open the Code tab and type `/sagavid:listing-video` followed by the Buildium listing link. If you have a phone walkthrough, drag the clips into the chat.
+1. Open the Code tab and type `/sagavid:listing-video` followed by the Buildium listing link. If you have a phone walkthrough, drag the clips into the chat. Claude asks for the Asana card (paste it, or say "new" and it makes one).
 2. Claude pulls the listing and the photos, picks the style, and shows you the slide list. Correct anything that is wrong ("the floors are new", "skip the bathroom photo").
 3. Claude opens a preview in your browser. Press play and say what to change in plain words. Repeat until you like it.
 4. Claude makes the final video and opens it. Watch it once more and say it is ready.
-5. Claude saves it to the shared drive (Video Content, Finals) and puts it on the Video Production board, assigned to Brittany with a Final Approval subtask. That is it: Brittany takes it from there.
+5. Claude saves it to the shared drive (Video Content, Finals) and moves the card to Draft, assigned to Brittany with a Final Approval subtask. That is it: Brittany takes it from there.
 
 Your videos are kept in `Documents/Sagareus Videos/` on your computer.
 
