@@ -133,7 +133,7 @@ You can close Terminal now.
 
 ### Step 10. Check it works
 
-In the Claude **Code** tab, type `/sagavid:before-after` and press **Return**. Claude should ask for the Asana card link. You're set up. You can stop there; the Video Creation steps above take it from here.
+In the Claude **Code** tab, type `/sagavid:before-after` and press **Return**. Claude should ask which Asana card the video is for (paste the link, or say "new" and it makes one). You're set up. You can stop there; the Video Creation steps above take it from here.
 
 ---
 
@@ -242,7 +242,7 @@ You can close PowerShell now.
 
 ### Step 9. Check it works
 
-In the Claude **Code** tab, type `/sagavid:before-after` and press **Enter**. Claude should ask for the Asana card link. You're set up.
+In the Claude **Code** tab, type `/sagavid:before-after` and press **Enter**. Claude should ask which Asana card the video is for (paste the link, or say "new" and it makes one). You're set up.
 
 > **Windows only:** pulling photos out of a move-out report PDF (Reno videos) uses a tool that isn't installed on Windows. If Claude says it can't read the PDF's photos, open the PDF, save the photos you want, and drag them into the chat.
 
