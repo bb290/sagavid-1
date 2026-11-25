@@ -4,9 +4,9 @@ Sagareus video tools for staff (sagavid-1), packaged as a Claude Code plugin. Tw
 
 - **`/sagavid:setup`** sets up a staff Mac or PC from inside Claude Code (run it once after installing the plugin; safe to rerun).
 - **`/sagavid:before-after` + the Video Production card** makes a before/after video for owners (Claude asks for the card first, or makes one), 30 seconds or less, in one of three styles (Junk, Trashed, Reno). Junk and Trashed need the SOP link on the card; Reno needs 1 to 2 lines on the card about what is happening in the video. Claude writes the script in Brittany's voice from that source (`VOICE.md`) and the staff member records it; never an AI voice. Full steps in `skills/before-after/SKILL.md`.
-- **`/sagavid:listing-video <buildium link>`** makes a 20-to-25-second vertical listing video from a Buildium rental listing (photos plus any phone walkthrough), in one of three approved styles (Fast Tour, Auto-Slide, Editorial). The staff member approves the storyboard (a claude.ai Artifact they comment on) and the cut, Every video has a card on the Asana Video Production board: Claude asks for it first, makes one if there isn't one, and comments on it at each checkpoint so the board shows where every video is. When the staff member is happy, Claude moves the card to **Draft**, assigned to Brittany for Final Approval. All three work the same way: the staff member approves their own storyboard and cut, and the card lands in Draft for Brittany. When Brittany moves the card to **Approved**, it is scheduled to the five channels from her side. Nothing posts from a staff computer.
+- **`/sagavid:listing-video <buildium link>`** makes a 20-to-25-second vertical listing video from a Buildium rental listing (photos plus any phone walkthrough), in one of three approved styles (Fast Tour, Auto-Slide, Editorial). The staff member approves the storyboard (a claude.ai Artifact they comment on) and the cut. Every video has a card on the Asana Video Production board: Claude asks for it first, makes one if there isn't one, and comments on it at each checkpoint so the board shows where every video is. When the staff member is happy, Claude moves the card to **Draft**, assigned to Brittany for Final Approval. All three work the same way: the staff member approves their own storyboard and cut, and the card lands in Draft for Brittany. When Brittany moves the card to **Approved**, it is scheduled to the five channels from her side. Nothing posts from a staff computer.
 
-Staff guide with the Video Creation steps and all six samples: Outline, [SagaVids -1](https://sagareus.getoutline.com/doc/sagavids-1-MBhNsUEbSF). Setup (Mac and Windows, step by step) is below.
+Staff guide with the Video Creation steps, the styles and all six samples: Outline, [SagaVids -1](https://sagareus.getoutline.com/doc/sagavids-1-MBhNsUEbSF). Setup: Outline, [Set Up // SagaVids-1](https://sagareus.getoutline.com/doc/set-up-sagavids-1-czcUMAeUic). The Setup and Making a video sections below match those two pages; change them together.
 
 ## Setup (once per computer, about 30 minutes, mostly waiting)
 
@@ -119,13 +119,30 @@ You can run `/sagavid:setup` again at any time. It checks everything and fixes w
 
 ## Making a video
 
-Type `/sagavid:listing-video` or `/sagavid:before-after` in the Code tab; Claude walks you through the rest (the full steps are in the Outline guide). The listing video:
+Everything happens in the Claude app's **Code** tab. Not set up yet? See Setup above.
 
-1. Open the Code tab and type `/sagavid:listing-video` followed by the Buildium listing link. If you have a phone walkthrough, drag the clips into the chat. Claude asks for the Asana card (paste it, or say "new" and it makes one).
-2. Claude pulls the listing and the photos, picks the style, and shows you the slide list. Correct anything that is wrong ("the floors are new", "skip the bathroom photo").
-3. Claude opens a preview in your browser. Press play and say what to change in plain words. Repeat until you like it.
-4. Claude makes the final video and opens it. Watch it once more and say it is ready.
-5. Claude saves it to the shared drive (Video Content, Finals) and moves the card to Draft, assigned to Brittany with a Final Approval subtask. That is it: Brittany takes it from there.
+
+1. **Type the command**: `/sagavid:listing-video` + the Buildium link, or `/sagavid:before-after`.
+2. **Pick the Asana card.** Paste the card link from the Video Production board, or say **new** and Claude makes one. Every video has a card, and Claude keeps it up to date (In Progress, a short comment at each checkpoint, then Draft) so the board always shows where each video is.
+3. **Give Claude the material.** Drag files into the chat or paste Drive links (if it's already on the card, Claude takes it from there).
+   1. For a listing:
+      1. All 3 styles: Buildium listing link + walk thru video
+   2. For a before/after:
+      1. Junk and Trashed styles: move-out video(s) or photo(s), listing walkthrough video and/or photos, and the link to the relevant SOP
+      2. Reno style: before/during/after videos and/or photos; 1-2 sentences about whats happening
+4. **Answer Claude's questions**
+   1. This is the only time you're asked for facts, so answer from what you know: what the floors are, what's new, which photos are staged or edited.
+   2. For a before/after, Claude writes the voiceover script from the SOP; you read it and record it, then drag the recording into the chat.
+5. **Make edits on the storyboard.** Claude sends a link; comment on any frame, or say "approved" in the chat.
+   1. Rotated images
+   2. Double check for personal info
+   3. Remove dates that show a long turn over (or anything else that makes us look bad)
+6. **Watch the preview**
+   1. Prompt any last changes
+7. **Tell Claude it's Done.**
+   1. Claude saves the video to Video Content / Finals and moves the card to **Draft** on the Video Production board with a **Final Approval** subtask for Brittany F.
+   2. She approves & moves to Approved
+   3. Automation pulls approved videos +schedules it to post to Instagram, Facebook, YouTube, LinkedIn, and Google Business Profile, and moves the card to **Shipped**.
 
 Your videos are kept in `Documents/Sagareus Videos/` on your computer.
 
@@ -139,5 +156,5 @@ Rent, deposit, specials, availability date, fees, screening criteria, utility co
 - `skills/setup/`: `/sagavid:setup`, which sets up a staff Mac or PC from inside Claude Code (Homebrew from its .pkg on a Mac, winget on Windows, Chrome, Drive, HyperFrames, the ElevenLabs key through a hidden pop-up so it never enters the chat). The Outline page Set Up // SagaVids-1 mirrors the Setup section above.
 - `skills/before-after/`: the Junk, Trashed and Reno before/after builds (`build_ba_junk.py`, `build_ba_trashed.py`, `build_ba_reno.py`), voice, captions and music scripts, each style's own track, sfx and fonts. Scripts come from the SOP the staff member links (Reno: the card's note on the work); no positions file ships with the plugin.
 - Layout: `.claude-plugin/` (plugin and marketplace manifests), `skills/listing-video/` (SKILL.md, `scripts/`, `assets/fonts` Fraunces SIL OFL, `assets/music` the two approved tracks, `template/` the HyperFrames project files).
-- The source of truth for the scripts is this repo. Brittany's own `/saga-listing-video` in the Sagareus workspace generates new music with ElevenLabs and writes to `content/listing-videos/`; the staff copy uses the music library and `~/Documents/Sagareus Videos/` instead. Keep script fixes in sync.
+- This repo is the one video flow for everyone, Brittany included (2026-11-25): there is no separate copy of these skills to keep in sync.
 - Bump `version` in `.claude-plugin/plugin.json` when you change anything, so staff get the update.
